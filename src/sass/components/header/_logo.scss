@@ -1,6 +1,7 @@
 .m-logo {
   display: inline-block;
   height: 25px;
+  filter: var(--svg-logo-filter);
 
   img {
     width: auto;

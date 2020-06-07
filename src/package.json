@@ -42,7 +42,8 @@
     "run-script-os": "^1.0.7",
     "sass": "^1.22.9",
     "sass-loader": "7.*",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.43.0"
   },
   "dependencies": {
     "aos": "^2.3.4",
