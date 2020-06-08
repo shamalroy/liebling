@@ -39,6 +39,10 @@ a {
   text-decoration: none;
 }
 
+a[target="_blank"]:after {
+  content: " ⤤";
+}
+
 fieldset {
   padding: 0;
   margin: 0;

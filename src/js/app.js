@@ -40,6 +40,7 @@ $(document).ready(() => {
   const $searchNoResults = $('.js-no-results')
   const $toggleDarkMode = $('.js-toggle-darkmode')
   const $closeNotification = $('.js-notification-close')
+  const $anchorTag = $('a')
   const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
@@ -320,6 +321,13 @@ $(document).ready(() => {
 
   shave('.js-article-card-title', 100)
   shave('.js-article-card-title-no-image', 250)
+
+  $anchorTag.each(function() {
+      if (this.hostname && this.hostname != window.location.hostname) {
+          $(this).attr('target', '_blank');
+          $(this).attr('rel', 'noopener');
+      }
+  });
 
   checkForActionParameter()
   trySearchFeature()
