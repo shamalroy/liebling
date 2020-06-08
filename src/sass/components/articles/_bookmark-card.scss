@@ -1,0 +1,147 @@
+.m-bookmark-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--secondary-border-color);
+  z-index: 1;
+  @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+
+  &:hover {
+    @include transform(translateY(-5px));
+
+    &:before {
+      @include bs(var(--article-shadow-hover));
+    }
+
+    .m-bookmark-card__author {
+      @include bs(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  @include respond-to('medium') {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  @include respond-to('large') {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  &.no-picture {
+    .m-bookmark-card__picture {
+      height: 85px !important;
+    }
+
+    .m-bookmark-card__info {
+      background-color: var(--secondary-subtle-color);
+    }
+
+    .m-bookmark-card__title {
+      line-height: 1.4;
+      font-size: 1.625rem;
+    }
+  }
+
+  &.as-author {
+    .m-bookmark-card__picture-link {
+      z-index: 2;
+    }
+
+    .m-bookmark-card__info {
+      padding: 0;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 0;
+    left: 10px;
+    border-radius: 10px;
+    @include bs(var(--article-shadow-normal));
+    @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+  }
+}
+
+.m-bookmark-card__info {
+  flex: 1;
+  position: relative;
+  padding: 30px 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--background-color);
+}
+
+.m-bookmark-card__title {
+  color: var(--titles-color);
+  letter-spacing: 0.4px;
+  line-height: 1.3;
+  font-size: 1.250rem;
+  font-weight: 400;
+  margin: 0;
+
+  @include respond-to('medium') {
+    font-weight: 600;
+  }
+}
+
+.m-bookmark-card__content {
+  ul {
+    counter-reset: index;
+    padding-inline-start: 10px;
+  }
+
+  li {
+    counter-increment: index;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+  }
+
+  li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  li + li {
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+}
+
+.m-bookmark-card__excerpt {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  color: var(--titles-color);
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.rtl {
+  .m-bookmark-card__social {
+    direction: ltr;
+  }
+}
