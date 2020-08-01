@@ -1,25 +1,18 @@
-// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
-
 @import "common/reset";
 @import "common/mixins";
 @import "common/variables";
 @import "common/themes";
 @import "common/helpers";
-@import "common/global";
 @import "common/icons";
+@import "common/global";
 
 @import "layouts/wrapper";
 @import "layouts/content";
-@import "layouts/post-content";
-@import "layouts/grid";
-@import "layouts/fullscreen";
 
 @import "components/ui/button";
 @import "components/ui/icon-button";
 @import "components/ui/input";
-@import "components/ui/pagination";
 @import "components/ui/section-title";
-@import "components/ui/back";
 @import "components/ui/small-text";
 @import "components/ui/not-found";
 @import "components/ui/alert";
@@ -65,9 +58,5 @@
 @import "components/search/result";
 @import "components/footer";
 
-@import"components/404/title";
-@import"components/404/subtitle";
-@import"components/404/text";
-
-@import "libs/slick";
 @import "libs/aos/aos";
+@import "libs/glide/glide.core";
